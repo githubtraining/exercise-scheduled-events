@@ -13,3 +13,10 @@ _Note:_ A fourth workflow titled `grading.yaml` exists, you do not need to use t
 - `stale-daily.yaml` contains a trigger to run daily at midnight
 - `stale-weekly.yaml` contains a trigger to run every Monday
 - `stale-monthly.yaml` contains a trigger to run on the first of every month
+- All workflows should contain valid syntax.
+
+### References
+Use these to help you!
+
+- [Events that trigger workflows - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#schedule)
+- [Cron examples - Crontab.guru](https://crontab.guru/examples.html)
