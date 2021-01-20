@@ -1,1 +1,3 @@
 # Grading script
+# - Would probably have to create a regular expression to parse the cron syntax.
+# - Use the check statuses and suites to validate workflow file as a whole.
