@@ -1,3 +1,30 @@
 # Grading script
 # - Would probably have to create a regular expression to parse the cron syntax.
 # - Use the check statuses and suites to validate workflow file as a whole.
+
+# This is a basic workflow to help you get started with Actions
+
+name: Grade scheduled events lab
+
+# Controls when the action will run. 
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  grade:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - uses: githubtraining/yaml-parser-action@main
+        with: 
+          github-token: ${secrets.GITHUB_TOKEN}
+          files: "stale-daily.yml,stale-monthly.yml,stale-weekly.yml"
