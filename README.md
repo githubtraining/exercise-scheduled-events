@@ -9,7 +9,7 @@ In the codebase for this repo, you'll find 3 workflows which we describe below w
 _Note:_ A fourth workflow titled `grading.yaml` exists, you do not need to use this workflow for any purpose. Altering this workflow will affect the repository's ability to assess and give feedback on your lab.
 
 ### Lab instructions
- To successfully complete this lab, the following conditions must be met on the `main` branch of his repository:
+ To successfully complete this lab, the following conditions must be met on any branch other than the default branch (usually `main`) of his repository:
 - `stale-daily.yaml` contains a trigger to run daily at midnight
 - `stale-weekly.yaml` contains a trigger to run every Monday
 - `stale-monthly.yaml` contains a trigger to run on the first of every month
