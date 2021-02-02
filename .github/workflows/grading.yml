@@ -4,7 +4,7 @@ on:
     paths:
     - '.github/workflows/stale-*.yml'
     branches-ignore:
-    - default
+    - 'main'
   workflow_dispatch:
 
 jobs:
