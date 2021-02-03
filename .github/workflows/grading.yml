@@ -19,7 +19,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           files: "stale-daily.yml,stale-monthly.yml,stale-weekly.yml"
-      - name: More info
+      - name: Troubleshooting info for grading
         if: failure()
         uses: githubtraining/looking-glass-action@main
         with:
