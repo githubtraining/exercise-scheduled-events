@@ -30,4 +30,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: troubleshooting steps
-        run: echo "To get started, change the on field in stale-daily.yml."
+        run: echo "To get started, change the on field in stale-daily.yml. Make your commits to any branch OTHER THAN main or your default branch."
