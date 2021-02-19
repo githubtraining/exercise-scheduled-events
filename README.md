@@ -43,7 +43,7 @@ See *[Viewing workflow run history]* if you need assistance.
 
 ## Troubleshooting
 
- If the grading workflow does not automatically run after you complete the instructions, run the troubleshooter: in the **Actions** tab select the **Grading workflow**, click **Run workflow**, select the appropriate branch (usually `main`), and click the **Run workflow** button.
+ If the grading workflow does not automatically run after you complete the instructions, run the troubleshooter: in the **Actions** tab select the **Grading workflow**, click **Run workflow**, select the appropriate branch, and click the **Run workflow** button.
 
 See *[Running a workflow on GitHub]* if you need assistance.
 
