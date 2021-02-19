@@ -11,7 +11,7 @@ This lab is an exercise to check your knowledge on scheduled events. It is autom
 
 ## About this lab
 
-:warning: A grading script and a setup utility exist inside of the `.github/` directory. You do not need to use these workflows for any purpose and **altering their contents will affect the repository's ability to assess your lab and give feedback.**
+:warning: A grading script exists under `.github/workflows/grading.yml`. You do not need to use this workflow for any purpose and **altering its contents will affect the repository's ability to assess your lab and give feedback.**
 
 :warning: This lab utilizes [GitHub Actions](https://docs.github.com/en/actions), which is free for public repositories and self-hosted runners, but may incur charges on private repositories. See *[About billing for GitHub Actions]* to learn more.
 
@@ -19,19 +19,19 @@ This lab is an exercise to check your knowledge on scheduled events. It is autom
 
 ## Instructions
 
-In the codebase for this repo, you'll find 3 workflows which we describe below with their intended purpose. Each workflow is complete **except for** the `on:` key.
+In the `.github/workflows` folder of this repo, you'll find 3 workflows which we describe below with their intended purpose. Each workflow is complete **except for** the `on:` key.
 
-- `stale-daily.yaml`: checks for stale issues daily at midnight and closes them
-- `stale-weekly.yaml`: checks for stale issues every Monday and closes them
-- `stale-monthly.yaml`: checks for stale issues on the first of every month and closes them
+- `stale-daily.yml`: checks for stale issues daily at midnight and closes them
+- `stale-weekly.yml`: checks for stale issues every Monday and closes them
+- `stale-monthly.yml`: checks for stale issues on the first of every month and closes them
 
 Please complete the instructions below:
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
 2. In your newly created repository, create a new branch.
 3. On your new branch, edit the `on` key of each `stale` workflow so that:
-    - `stale-daily.yaml` contains a trigger to run daily at midnight
-    - `stale-weekly.yaml` contains a trigger to run every Monday
-    - `stale-monthly.yaml` contains a trigger to run on the first of every month
+    - `stale-daily.yml` contains a trigger to run daily at midnight
+    - `stale-weekly.yml` contains a trigger to run every Monday
+    - `stale-monthly.yml` contains a trigger to run on the first of every month
 
 ## Seeing your result
 
