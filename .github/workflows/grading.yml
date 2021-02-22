@@ -3,8 +3,6 @@ on:
   push:
     paths:
     - '.github/workflows/stale-*.yml'
-    branches-ignore:
-    - 'main'
   workflow_dispatch:
 
 jobs:
