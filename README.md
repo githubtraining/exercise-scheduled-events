@@ -27,8 +27,7 @@ In the `.github/workflows` folder of this repo, you'll find 3 workflows which we
 
 Please complete the instructions below:
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
-2. In your newly created repository, create a new branch.
-3. On your new branch, edit the `on` key of each `stale` workflow so that:
+2. On your repository, edit the `on` key of each `stale` workflow so that:
     - `stale-daily.yml` contains a trigger to run daily at midnight
     - `stale-weekly.yml` contains a trigger to run every Monday
     - `stale-monthly.yml` contains a trigger to run on the first of every month
