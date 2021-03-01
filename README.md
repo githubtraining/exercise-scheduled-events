@@ -19,18 +19,12 @@ This lab is an exercise to check your knowledge on scheduled events. It is autom
 
 ## Instructions
 
-In the `.github/workflows` folder of this repo, you'll find 3 workflows which we describe below with their intended purpose. Each workflow is complete **except for** the `on:` key.
+In the `.github/workflows/stale-weekly.yml` you'll find a workflow that is intended to check for and close stale issues every Monday. The workflow is complete **except for** the `on:` key.
 
-- `stale-daily.yml`: checks for stale issues daily at midnight and closes them
-- `stale-weekly.yml`: checks for stale issues every Monday and closes them
-- `stale-monthly.yml`: checks for stale issues on the first of every month and closes them
 
 Please complete the instructions below:
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
-2. On your repository, edit the `on` key of each `stale` workflow so that:
-    - `stale-daily.yml` contains a trigger to run daily at midnight
-    - `stale-weekly.yml` contains a trigger to run every Monday
-    - `stale-monthly.yml` contains a trigger to run on the first of every month
+2. On your repository, edit the `on:` key of the `stale-weekly.yml` workflow so that it contains a trigger to run every Monday.
 
 ## Seeing your result
 

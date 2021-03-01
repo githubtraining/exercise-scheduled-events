@@ -16,7 +16,7 @@ jobs:
         uses: githubtraining/yaml-parser-action@main
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          files: "stale-daily.yml,stale-monthly.yml,stale-weekly.yml"
+          files: "stale-weekly.yml"
       - name: Troubleshooting info for grading
         if: failure()
         uses: githubtraining/looking-glass-action@main
@@ -28,4 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: troubleshooting steps
-        run: echo "To get started, change the on field in stale-daily.yml."
+        run: echo "To get started, change the on field in stale-weekly.yml."
