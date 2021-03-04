@@ -13,13 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Grade scheduled events activity
         id: events
-        uses: githubtraining/yaml-parser-action@main
+        uses: githubtraining/yaml-parser-action@5038c9d0343a3bc715ccfa5eeec5d918e3b5a96a
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           files: "stale-weekly.yml"
       - name: Troubleshooting info for grading
         if: failure()
-        uses: githubtraining/looking-glass-action@main
+        uses: githubtraining/looking-glass-action@87bf9957ac6899e95ff1c2f6f443de625c83c3f2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           feedback: ${{ steps.events.outputs.report }}
