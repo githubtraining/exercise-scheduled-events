@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Grade scheduled events activity
         id: events
-        uses: githubtraining/yaml-parser-action@5038c9d0343a3bc715ccfa5eeec5d918e3b5a96a
+        uses: ./.github/actions/yaml-parser-action
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           files: "stale-weekly.yml"
