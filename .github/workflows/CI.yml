@@ -6,7 +6,11 @@ on:
 
 jobs:
   run-tests:
+    if: github.repository == 'githubtraining/lab-scheduled-events'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .github/actions/yaml-parser-action
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
