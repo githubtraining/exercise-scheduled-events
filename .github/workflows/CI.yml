@@ -1,4 +1,4 @@
-name: CI
+name: CI for local yaml-parser-action
 on:
   push:
     branches-ignore:
