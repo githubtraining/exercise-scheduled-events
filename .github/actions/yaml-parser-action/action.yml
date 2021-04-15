@@ -1,0 +1,14 @@
+name: "yaml parser"
+author: mattdavis0351
+description: "parse github workflows for info"
+inputs:
+  github-token:
+    description: "Token for API access, use GITHUB_TOKEN"
+    required: true
+  files:
+    description: "Comma separated list of files to read, files must live inside .github/workflows/"
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
