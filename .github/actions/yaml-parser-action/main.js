@@ -4,22 +4,12 @@ const gradeLearner = require('./lib/gradeLearner')
 
 async function run() {
   try {
-    const files = core.getInput('files').split(',')
-    //   TODO: verify the proper files were passed and learner didn't tamper with grading.yml
+    // Set output for service Error
+    // Set output for correct
+    // Set output for incorrect
 
-    const answers = {
-      'stale-weekly': ['0 0 * * MON', '0 0 * * 1'],
-    }
-
-    const results = gradeLearner(files, answers)
-    core.setOutput('report', results)
-    // TODO pinpoint the exact file that failed
-    const resultsArray = Object.entries(results)
-    resultsArray.forEach((res) => {
-      if (res[1].report.isCorrect !== true || res[1].report.level !== 'info') {
-        throw res
-      }
-    })
+    const results = gradeLearner()
+    core.setOutput('reports', results)
   } catch (error) {
     core.setFailed(error)
   }
