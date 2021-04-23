@@ -4464,10 +4464,6 @@ const gradeLearner = __webpack_require__(244)
 
 async function run() {
   try {
-    // Set output for service Error
-    // Set output for correct
-    // Set output for incorrect
-
     const results = gradeLearner()
     core.setOutput('reports', results)
   } catch (error) {
