@@ -264,12 +264,10 @@ module.exports = () => {
             isCorrect: false,
             type: 'actions',
             level: 'warning',
-            msg: `Expected ${filename} to contain the cron syntax ${
-              answers[0]
-            } or ${answers[1]}, but got ${doc.on.schedule[0].cron.trim()}`,
+            msg: `incorrect solution`,
             error: {
-              expected: '',
-              got: '',
+              expected: '0 0 * * MON or 0 0 * * 1',
+              got: `${doc.on.schedule[0].cron.trim()}`,
             },
           },
         ],
