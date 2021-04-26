@@ -32,7 +32,7 @@ module.exports = () => {
           {
             filename: filename,
             isCorrect: false,
-            type: 'actions',
+            display_type: 'actions',
             level: 'warning',
             msg: `incorrect solution`,
             error: {
@@ -49,7 +49,7 @@ module.exports = () => {
         {
           filename: filename,
           isCorrect: false,
-          type: 'actions',
+          display_type: 'actions',
           level: 'fatal',
           msg: '',
           error: {

@@ -80,7 +80,7 @@ describe('gradeLearner', () => {
           {
             filename: `workspace/.github/workflows/stale-weekly.yml`,
             isCorrect: false,
-            type: 'actions',
+            display_type: 'actions',
             level: 'warning',
             msg: 'incorrect solution',
             error: {
@@ -105,7 +105,7 @@ describe('gradeLearner', () => {
           {
             filename: `workspace/.github/workflows/stale-weekly.yml`,
             isCorrect: false,
-            type: 'actions',
+            display_type: 'actions',
             level: 'fatal',
             msg: '',
             error: {
