@@ -23,7 +23,7 @@ describe('gradeLearner', () => {
             display_type: 'actions',
             level: 'info',
             msg:
-              'Great job!  You have successfully configred the stale-weekly workflow file',
+              'Great job!  You have successfully configured the stale-weekly workflow file.',
             error: {
               expected: '',
               got: '',
@@ -53,7 +53,7 @@ describe('gradeLearner', () => {
             display_type: 'actions',
             level: 'info',
             msg:
-              'Great job!  You have successfully configred the stale-weekly workflow file',
+              'Great job!  You have successfully configured the stale-weekly workflow file.',
             error: {
               expected: '',
               got: '',
