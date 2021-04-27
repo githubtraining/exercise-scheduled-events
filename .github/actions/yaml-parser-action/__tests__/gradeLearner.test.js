@@ -3,6 +3,7 @@ const fs = require('fs')
 jest.mock('fs')
 
 describe('gradeLearner', () => {
+  process.env.GITHUB_WORKSPACE = 'workspace'
   it('Passes when learner supplies a proper value', () => {
     const mockFile = `
     on:
@@ -10,25 +11,25 @@ describe('gradeLearner', () => {
         - cron: "0 0 * * MON"
     `
 
-    const files = ['some-test.yml']
-    const answers = {
-      'some-test': ['0 0 * * MON', '0 0 * * 1'],
-    }
-
     fs.readFileSync.mockReturnValue(mockFile)
-    const res = gradeLearner(files, answers)
+    const res = gradeLearner()
 
     expect(JSON.stringify(res)).toBe(
       JSON.stringify({
-        'some-test': {
-          //   isCorrect: true,
-          report: {
+        reports: [
+          {
+            filename: `workspace/.github/workflows/stale-weekly.yml`,
             isCorrect: true,
-            type: 'actions',
+            display_type: 'actions',
             level: 'info',
-            msg: 'Results for some-test: correct',
+            msg:
+              'Great job!  You have successfully configured the stale-weekly workflow file.',
+            error: {
+              expected: '',
+              got: '',
+            },
           },
-        },
+        ],
       })
     )
   })
@@ -40,25 +41,25 @@ describe('gradeLearner', () => {
         - cron: "0 0 * * 1"
     `
 
-    const files = ['some-test.yml']
-    const answers = {
-      'some-test': ['0 0 * * MON', '0 0 * * 1'],
-    }
-
     fs.readFileSync.mockReturnValue(mockFile)
-    const res = gradeLearner(files, answers)
+    const res = gradeLearner()
 
     expect(JSON.stringify(res)).toBe(
       JSON.stringify({
-        'some-test': {
-          //   isCorrect: true,
-          report: {
+        reports: [
+          {
+            filename: `workspace/.github/workflows/stale-weekly.yml`,
             isCorrect: true,
-            type: 'actions',
+            display_type: 'actions',
             level: 'info',
-            msg: 'Results for some-test: correct',
+            msg:
+              'Great job!  You have successfully configured the stale-weekly workflow file.',
+            error: {
+              expected: '',
+              got: '',
+            },
           },
-        },
+        ],
       })
     )
   })
@@ -70,26 +71,50 @@ describe('gradeLearner', () => {
         - cron: "0 0 * * *"
     `
 
-    const files = ['some-test.yml']
-    const answers = {
-      'some-test': ['0 0 * * MON', '0 0 * * 1'],
-    }
-
     fs.readFileSync.mockReturnValue(mockFile)
-    const res = gradeLearner(files, answers)
+    const res = gradeLearner()
 
     expect(JSON.stringify(res)).toBe(
       JSON.stringify({
-        'some-test': {
-          //   isCorrect: false,
-          report: {
+        reports: [
+          {
+            filename: `workspace/.github/workflows/stale-weekly.yml`,
             isCorrect: false,
-            type: 'actions',
-            level: 'fatal',
-            msg:
-              'Expected some-test to contain the cron syntax 0 0 * * MON or 0 0 * * 1, but got 0 0 * * *',
+            display_type: 'actions',
+            level: 'warning',
+            msg: 'incorrect solution',
+            error: {
+              expected: '0 0 * * MON or 0 0 * * 1',
+              got: '0 0 * * *',
+            },
           },
-        },
+        ],
+      })
+    )
+  })
+
+  it('should report failure if something gores really wrong', () => {
+    const mockFile = 'broken'
+
+    fs.readFileSync.mockReturnValue(mockFile)
+    const res = gradeLearner()
+
+    expect(JSON.stringify(res)).toBe(
+      JSON.stringify({
+        reports: [
+          {
+            filename: `workspace/.github/workflows/stale-weekly.yml`,
+            isCorrect: false,
+            display_type: 'actions',
+            level: 'fatal',
+            msg: '',
+            error: {
+              expected: '',
+              got:
+                'An internal error occurred.  Please open an issue at: https://github.com/githubtraining/lab-scheduled-events and let us know!  Thank you',
+            },
+          },
+        ],
       })
     )
   })

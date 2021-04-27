@@ -21,6 +21,7 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
+    "@vercel/ncc": "^0.28.3",
     "js-yaml": "^4.0.0"
   },
   "prettier": {
