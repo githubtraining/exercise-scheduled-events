@@ -18,7 +18,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           files: "stale-weekly.yml"
       - name: Troubleshooting info for grading
-        uses: githubtraining/looking-glass-action@v0.1.0
+        uses: githubtraining/looking-glass-action@507f3d308fd92b17b44dfdedd458a5c8854459c4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           feedback: ${{ steps.events.outputs.reports }}
